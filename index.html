@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+
+    <link rel="stylesheet" href="photon/css/photon.min.css">
+    <link rel="stylesheet" href="photon/swipe/dist/swipe.css">
+    <link rel="stylesheet" href="photon/frame-list/dist/frame-list.css">
+    <link rel="stylesheet" href="photon/dialog/dist/dialog.css">
+    <link rel="stylesheet" href="photon/input/dist/input.css">
+    <link rel="stylesheet" href="photon/slider/dist/range.css">
+    <link rel="stylesheet" href="photon/segment/dist/segment.css">
+    <link rel="stylesheet" href="photon/button-system/dist/btn.css">
+    <link rel="stylesheet" href="photon/progress-bar/dist/progress.css">
+    <link rel="stylesheet" href="photon/progress-circle/dist/progress-circle.css">
+
+    <script>window.jQuery = window.$ = require('jquery');require('electron-titlebar');</script>
+    <style>
+      .card{border-radius: 0px; margin-top: -1px}
+      .card:first-child {border-radius: 6px 6px 0 0px!important;}
+      .card:last-child {border-radius:  0 0 6px 6px!important;}
+      .top-titlebar {
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 32px;
+        padding-top: 7px;
+        background-color: #7a7c7c;
+        -webkit-user-select: none;
+        -webkit-app-region: drag;
+      }
+      progress{
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+  <!--
+    <div class="container">
+      <h1>Electube</h1>
+      <div id="electron-titlebar"></div>
+      <div class="row">
+
+      </div>
+
+      <div id="downloads" style="margin-top: 15px">
+
+      </div>
+
+    </div>
+-->
+  <div class="window">
+    <header class="toolbar toolbar-header top-titlebar">
+      <h1 class="title">Electube</h1>
+    </header>
+    <div class="window-content">
+      <div class="pane-group">
+        <div class="pane">
+          <ul class="list-group" id="downloads">
+            <li class="list-group-header row">
+              <button type="submit" id="download" class="btn btn-block btn-system btn-active" style="float: right">Télécharger</button>
+              <span style="display: block; overflow: hidden; padding-right: 10px">
+                <input type="text" class="form-control" style="width: 100%" id="url" placeholder="http://" value="https://www.youtube.com/watch?v=c6xWgkdd7Ts">
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <footer class="toolbar toolbar-footer">
+      <h1 class="title" id="summary"><span id="speed"></span> | <span id="queue"></span></h1>
+    </footer>
+  </div>
+  </body>
+
+  <script>
+    // You can also require other files to run in this process
+    require('./renderer.js')
+  </script>
+</html>
